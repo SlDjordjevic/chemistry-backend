@@ -21,7 +21,8 @@ CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=CORS_ORIGINS,
+    # allow_origins=CORS_ORIGINS,
+    allow_origins=["*"],  # Dozvoljava Vercel-u i bilo kom drugom sajtu da povuče podatke
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
